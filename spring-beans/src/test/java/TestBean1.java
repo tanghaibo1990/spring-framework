@@ -10,6 +10,5 @@ public class TestBean1 {
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
 
 		reader.loadBeanDefinitions(resource);
-		Person person = factory.getBean(Person.class);
 	}
 }

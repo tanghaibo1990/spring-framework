@@ -2,5 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<import resource="bean-person.xml"/>
+	<bean id="car" class="Car"></bean>
+	<bean id="person" class="Person">
+		<property name="car" ref="car"/>
+	</bean>
 </beans>
