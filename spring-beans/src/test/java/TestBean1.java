@@ -10,5 +10,7 @@ public class TestBean1 {
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
 
 		reader.loadBeanDefinitions(resource);
+
+		factory.getBean(Display.class).display();
 	}
 }

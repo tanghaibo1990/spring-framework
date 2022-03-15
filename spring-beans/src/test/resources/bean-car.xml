@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="person" class="Person">
-		<meta key="key1" value="val1"/>
+	<bean id="bmw" class="Bmw"/>
+	<bean id="hongqi" class="Hongqi"/>
+	<bean id="display" class="Display">
+		<lookup-method name="getCar" bean="bmw"/>
 	</bean>
 </beans>
