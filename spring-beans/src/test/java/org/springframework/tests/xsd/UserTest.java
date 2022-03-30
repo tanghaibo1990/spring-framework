@@ -14,6 +14,7 @@ public class UserTest {
 		reader.loadBeanDefinitions(resource);
 
 		User user = (User) factory.getBean("user");
+		User user1 = (User) factory.getBean("user");
 		System.out.println(user.getUserName() + "----" + user.getEmail());
 	}
 }
