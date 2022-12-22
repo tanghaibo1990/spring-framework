@@ -75,6 +75,7 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 
 
 	/** Cache of singleton objects: bean name to bean instance.
+	 * 一级缓存，存放的是单例 bean 的映射。
 	 * 存放的是单例 bean 的映射。
 	 *  *
 	 *  * 对应关系为 bean name --> bean instance
@@ -82,6 +83,7 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 	private final Map<String, Object> singletonObjects = new ConcurrentHashMap<>(256);
 
 	/** Cache of singleton factories: bean name to ObjectFactory.
+	 * 三级缓存
 	 * 存放的是 ObjectFactory，可以理解为创建单例 bean 的 factory 。
 	 *  *
 	 *  * 对应关系是 bean name --> ObjectFactory
@@ -89,6 +91,7 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 	private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>(16);
 
 	/** Cache of early singleton objects: bean name to bean instance.
+	 * 二级缓存
 	 * 存放的是早期的 bean，对应关系也是 bean name --> bean instance。
 	 *  *
 	 *  * 它与 {@link #singletonFactories} 区别在于 earlySingletonObjects 中存放的 bean 不一定是完整。
